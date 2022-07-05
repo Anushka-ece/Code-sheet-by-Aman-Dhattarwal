@@ -1,0 +1,21 @@
+ int maxProfit(vector<int>& prices) {
+        int max_pro=0;//we are initializing value of profit at first as 0
+        int n=prices.size();
+        /*now we are initializing index of stock which is to be bought as 0 and index of stock which is to be sold as 1 because selling is to be done after buying */
+        int buy=0;
+        int sell=1;
+       while(buy<n-1 && sell<n)
+        {
+           if(prices[sell]<prices[buy])
+        {
+            buy=sell;
+            sell++;
+        }
+        else
+        {
+max_pro=max(max_pro,prices[sell]-prices[buy]);
+       sell++;
+        }
+       }
+        return max_pro;
+    }
