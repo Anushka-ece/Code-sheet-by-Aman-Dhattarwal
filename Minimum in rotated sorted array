@@ -1,0 +1,25 @@
+lic:
+    int findMin(vector<int>& nums) {
+        int n=nums.size();
+          int ans;
+        //boundary case
+        if(n==1)
+            ans=nums[0];
+     int rotations;
+        int count=0;
+        int i;
+        for(i=1;i<n;i++)
+        {
+            if(nums[i]<nums[i-1])
+            {
+                rotations=i+1;
+                ans=nums[i];
+                count++;
+                break;
+            } 
+            if(count==0)
+                ans=nums[0];
+           
+        }
+        return ans;
+    }
