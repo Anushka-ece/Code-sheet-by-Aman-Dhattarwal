@@ -1,0 +1,14 @@
+    int search(vector<int>& nums, int target) {
+        int n=nums.size();
+        int low=0;
+        int high=n-1;
+        while(low<=high)
+        {
+            if(nums[low]==target)return low;
+            if(nums[high]==target)return high;
+            low++;
+            high--;
+        }
+        return -1;
+    }
+    //Two pointer technique
